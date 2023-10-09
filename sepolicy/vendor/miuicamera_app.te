@@ -18,5 +18,6 @@ allow miuicamera_app {
 dontaudit miuicamera_app radio_service:service_manager find;
 
 allow miuicamera_app app_data_file:file execute;
+allow miuicamera_app privapp_data_file:file execute;
 
 get_prop(miuicamera_app, vendor_panel_info_prop)

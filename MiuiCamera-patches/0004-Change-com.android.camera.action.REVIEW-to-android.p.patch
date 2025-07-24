@@ -1,7 +1,7 @@
-From 59e3f0a919d5b8adf363ae2753da049ceec89ee2 Mon Sep 17 00:00:00 2001
+From e7048524f335d5099a3df1817b3c0255da46d973 Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Wed, 16 Oct 2024 01:29:58 +0200
-Subject: [PATCH 4/7] Change com.android.camera.action.REVIEW to
+Subject: [PATCH 4/6] Change com.android.camera.action.REVIEW to
  android.provider.action.REVIEW
 
 This is the standard intent for review actions
@@ -11,7 +11,7 @@ This is the standard intent for review actions
  2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/smali/com/android/camera/o6.smali b/smali/com/android/camera/o6.smali
-index 3b3616fb6..44da3e06e 100644
+index a5d911146..4cc886dc8 100644
 --- a/smali/com/android/camera/o6.smali
 +++ b/smali/com/android/camera/o6.smali
 @@ -210,7 +210,7 @@
@@ -24,7 +24,7 @@ index 3b3616fb6..44da3e06e 100644
  .field public static final e0:I = 0x8c36
  
 diff --git a/smali/com/android/camera/r3.smali b/smali/com/android/camera/r3.smali
-index b99eb94a0..73762221b 100644
+index c5f53dafb..962415ff1 100644
 --- a/smali/com/android/camera/r3.smali
 +++ b/smali/com/android/camera/r3.smali
 @@ -1108,7 +1108,7 @@
@@ -46,5 +46,5 @@ index b99eb94a0..73762221b 100644
      invoke-static {p1, v1, p0}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
  
 -- 
-2.47.1
+2.49.0.windows.1
 

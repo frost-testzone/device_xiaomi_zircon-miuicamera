@@ -19,10 +19,8 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 
-namespace_imports = [
-    'device/xiaomi/zircon-miuicamera',
-    'vendor/xiaomi/zircon'
-]
+namespace_imports = ['device/xiaomi/zircon-miuicamera', 'vendor/xiaomi/zircon']
+
 
 def lib_fixup_system_ext_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'system_ext' else None
@@ -30,7 +28,9 @@ def lib_fixup_system_ext_suffix(lib: str, partition: str, *args, **kwargs):
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
-    ('vendor.mediatek.hardware.camera.isphal@1.0.so',): lib_fixup_system_ext_suffix
+    (
+        'vendor.mediatek.hardware.camera.isphal@1.0',
+    ): lib_fixup_system_ext_suffix,
 }
 
 blob_fixups: blob_fixups_user_type = {
@@ -48,6 +48,7 @@ module = ExtractUtilsModule(
     'zircon-miuicamera',
     'xiaomi',
     blob_fixups=blob_fixups,
+    lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
 
